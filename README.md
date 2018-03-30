@@ -24,7 +24,7 @@ import CountDown from 'react-native-countdown2';
 |    time          |        null       |  Number      |  倒计时结束时间戳         |
 |    endTitle        |       已结束       |  String      |  倒计时结束后显示的文字      |
 |    endFunc    |      null      |  Function    |  倒计时结束回调 |
-|  renderCountDown   |  null             |  Function       |   自定义倒计时，接收一个date参数  |
+|  renderCountDown   |  null             |  Function       |   自定义倒计时，接收一个参数可以获取倒计时  |
 
 #### Demo
 ```
