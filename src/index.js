@@ -106,4 +106,10 @@ export default class CountDown extends Component {
     render() {
         return this.renderCountDown();
     }
+
+    componentWillUnmount(){ 
+        this.setState = (state,callback) => {
+            return;
+        };  
+    }
 }
