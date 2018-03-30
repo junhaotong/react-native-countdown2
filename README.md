@@ -26,7 +26,8 @@ import CountDown from 'react-native-countdown2';
 |    endFunc    |      null      |  Function    |  倒计时结束回调 |
 |  renderCountDown   |  null             |  Function       |   自定义倒计时，接收一个参数可以获取倒计时  |
 
-#### Demo
+
+#### Example
 ```
 <CountDown
    endFunc={() => console.log(item.name)}
