@@ -12,6 +12,7 @@ export default class CountDown extends Component {
             status: true,
             time: props.time
         }
+        this.timer;
         this.computedTime.bind(this);
         this.renderCountDown.bind(this);
     }
@@ -52,7 +53,7 @@ export default class CountDown extends Component {
 
         let seconds = parseInt(totalSeconds % 60);
         let minutes = parseInt(totalSeconds / 60) % 60;
-        let hours = parseInt(totalSeconds / 3600);
+        let hours = parseInt(totalSeconds / 3600 % 24);
         let days = parseInt(totalSeconds / 86400);
 
         if (days <= 0 && hours <= 0 && minutes <= 0 && seconds <= 0) {
@@ -74,15 +75,15 @@ export default class CountDown extends Component {
                 seconds
             }
         });
-        if(this.state.status) {
-            this.start();
+        if(!this.state.status) {
+            clearInterval(this.timer);
         }
     }
 
     start() {
-        requestAnimationFrame(() => {
+        this.timer = setInterval(() => {
             this.computedTime()
-        });
+        }, 1000);
     }
     
     renderCountDown() {
